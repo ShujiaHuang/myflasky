@@ -3,13 +3,14 @@ Name: Shujia Huang
 Date: 2015-12-17
 """
 from flask import render_template
+from datetime import datetime
 
 from app import app
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', current_time=datetime.utcnow())
 
 @app.route('/user/<name>')
 def user(name):
