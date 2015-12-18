@@ -2,7 +2,7 @@
 Name: Shujia Huang
 Date: 2015-12-17
 """
-from flask import render_template, session, redirect, url_for
+from flask import render_template, session, redirect, url_for, flash
 from datetime import datetime
 
 from app import app
@@ -12,6 +12,9 @@ from .forms import NameForm
 def index():
     form = NameForm()
     if form.validate_on_submit():
+        old_name = session.get('name')
+        if old_name is not None and old_name != form.name.data:
+            flash('Looks like you have change your name!')
         session['name'] = form.name.data
         return redirect(url_for('index'))
     return render_template('index.html', 
