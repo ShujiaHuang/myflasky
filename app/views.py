@@ -8,6 +8,7 @@ from datetime import datetime
 from app import app, db
 from .forms import NameForm
 from .models import User
+from .email import send_email
 
 @app.route('/', methods = ['GET', 'POST'])
 def index():
@@ -23,10 +24,14 @@ def index():
             db.session.add(user)
             db.session.commit()
             session['known'] = False
+            if app.config['FLASKY_ADMIN']:
+                send_email(app.config['FLASKY_ADMIN'], 'New User', 
+                           'mail/new_user', user=user)
         else:
             session['known'] = True
 
         session['name'] = form.name.data
+        form.name.data = ''
         return redirect(url_for('index'))
     return render_template('index.html', 
                            form = form,
