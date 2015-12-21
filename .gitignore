@@ -3,3 +3,4 @@ venv/
 *.sh
 .*.swp
 *.sqlite
+migrations/
