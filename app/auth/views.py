@@ -83,7 +83,7 @@ def resend_confirmation():
 @login_required
 def change_password():
     form = ChangePasswordForm()
-    if form.validate_on_sumbit():
+    if form.validate_on_submit():
         if current_user.verify_password(form.old_password.data):
             current_user.password = form.password.data
             db.session.add(current_user)
