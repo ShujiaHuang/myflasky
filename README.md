@@ -1,16 +1,22 @@
 # myflasky
 
 ### Turn the virtualenv on
-```source venv/bin/activate```
+```
+source venv/bin/activate
+```
 
 ### Turn the virtualenv off
-```deactivate```
+```
+deactivate
+```
 
 ### 删除本地标签：
 ```git tag -d 标签名```  
 
 ### 删除远程标签：
-```git push origin :refs/tags/标签名  ```
+```
+git push origin :refs/tags/标签名
+```
 
 ### Run server
 ```
@@ -34,6 +40,7 @@ venv/bin/python run.py db init
 ```
 
 ### creat and migration database
+
 I should aways clean the folder 'migrations/versions/' before I run the
 command below
 
