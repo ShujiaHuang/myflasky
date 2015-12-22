@@ -86,3 +86,16 @@ $venv/bin/python run.py shell
 ```
 现在就可以用`john@example.com` 和密码`cat`登录进去了。由于还未实现注册页，目前只能通过命令行这种形式注册用户，而其他的用户则是不能登录的。
 
+### 如何给新注册用户发送验证信息，使用`itsdangerous`生成有限期限的token id
+```
+$venv/bin/python run.py shell 
+>>> from run import app
+>>> from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+>>> s = Serializer(app.config['SECRET_KEY'], expires_in = 3600)
+>>> token = s.dumps({ 'confirm': 23 })
+>>> token
+'eyJhbGciOiJIUzI1NiIsImV4cCI6MTQ1MDc3OTMyNiwiaWF0IjoxNDUwNzc1NzI2fQ.eyJjb25maXJtIjoyM30.i82WdsdJJ3x1b5lRhHMG0dKcs28FqFvBbOTuBHvplKI'
+>>> data = s.loads(token)
+>>> data
+{u'confirm': 23}
+````
