@@ -11,7 +11,9 @@ deactivate
 ```
 
 ### 删除本地标签：
-```git tag -d 标签名```  
+```
+git tag -d 标签名
+```  
 
 ### 删除远程标签：
 ```
@@ -49,8 +51,9 @@ venv/bin/python run.py db migrate -m "initial migration"
 ```
 
 #### database upgrade. Call this command immeditely after migrating database
+```
 venv/bin/python run.py db upgrade
-
+```
 
 ### 手动测试邮件发送
 ```
