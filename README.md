@@ -70,3 +70,7 @@ $venv/bin/python run.py shell
 >>>
 ``` 
 
+### 单元测试
+```
+venv/bin/python run.py test
+```
