@@ -74,3 +74,15 @@ $venv/bin/python run.py shell
 ```
 venv/bin/python run.py test
 ```
+
+### 添加用户，以便测试用户登录
+```
+$venv/bin/python run.py shell
+
+>>> u = User(email="john@example.com", username='john', password='cat')
+>>> db.session.add(u)
+>>> db.session.commit()
+>>>
+```
+现在就可以用`john@example.com` 和密码`cat`登录进去了。由于还未实现注册页，目前只能通过命令行这种形式注册用户，而其他的用户则是不能登录的。
+
