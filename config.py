@@ -1,9 +1,7 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
-
 # avoid 'Must provide secret_key to use csrf.'
-CSRF_ENDBLED = True
-
+#CSRF_ENDBLED = True
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
     # SQLite database
