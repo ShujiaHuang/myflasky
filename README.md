@@ -99,3 +99,24 @@ $venv/bin/python run.py shell
 >>> data
 {u'confirm': 23}
 ````
+
+### 初始化用户角色和权限
+```
+$venv/bin/python run.py shell
+
+>>> Role.insert_roles()
+>>> Role.query.all()
+[<Role u'Moderator'>, <Role u'Administrator'>, <Role u'User'>]
+>>> 
+```
+
+### 生成虚拟内容
+
+```
+$venv/bin/python run.py shell
+>>> User.generate_fake(100)
+>>> Post.generate_fake(100)
+>>> 
+```
+
+
