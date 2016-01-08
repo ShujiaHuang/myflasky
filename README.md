@@ -119,4 +119,10 @@ $venv/bin/python run.py shell
 >>> 
 ```
 
+http --json --auth : GET http://localhost:5000/api/v1.0/posts/
+http --auth huangshujia@gracegene.com:cat --json GET http://localhost:5000/api/v1.0/token
+http --auth huangshujia@gracegene.com:cat --json POST http://localhost:5000/api/v1.0/posts/ "body=I'm adding a post from the *command line*."
+
+
+
 
