@@ -124,5 +124,10 @@ http --auth huangshujia@gracegene.com:cat --json GET http://localhost:5000/api/v
 http --auth huangshujia@gracegene.com:cat --json POST http://localhost:5000/api/v1.0/posts/ "body=I'm adding a post from the *command line*."
 
 
+### 部署
+
+```
+venv/bin/gunicorn run:app
+```
 
 
