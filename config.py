@@ -7,6 +7,7 @@ class Config:
     # SQLite database
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     SQLALCHEMY_TRACK_MODIFICATIONS = True
+    SQLALCHEMY_RECORD_QUERIES = True
 
     # For email server
     MAIL_SERVER = 'smtp.mxhichina.com'
@@ -18,6 +19,7 @@ class Config:
     FLASKY_MAIL_SENDER = 'My Flasky admin <info@gracegene.com>'
     FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
     FLASKY_POSTS_PER_PAGE = 20
+    FLASKY_SLOW_DB_QUERY_TIME = 0.5
 
     @staticmethod
     def init_app(app):
